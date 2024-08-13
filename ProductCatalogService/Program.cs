@@ -14,17 +14,29 @@ builder.Services.AddDbContext<ProductContext>(options =>
 
 
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowReactApp",
+//        builder =>
+//        {
+//            builder.WithOrigins("http://localhost:3000") // Replace with your React app URL
+//                   .AllowAnyHeader()
+//                   .AllowAnyMethod()
+//                   .AllowCredentials();
+//        });
+//});
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
+    options.AddPolicy("AllowAllOrigins",
         builder =>
         {
-            builder.WithOrigins("http://localhost:3000") // Replace with your React app URL
-                   .AllowAnyHeader()
+            builder.AllowAnyOrigin()
                    .AllowAnyMethod()
-                   .AllowCredentials();
+                   .AllowAnyHeader();
         });
 });
+
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
