@@ -19,7 +19,7 @@ builder.Services.AddDbContext<ProductContext>(options =>
 //    options.AddPolicy("AllowReactApp",
 //        builder =>
 //        {
-//            builder.WithOrigins("http://localhost:3000") // Replace with your React app URL
+//            builder.WithOrigins("http://localhost:3000") 
 //                   .AllowAnyHeader()
 //                   .AllowAnyMethod()
 //                   .AllowCredentials();
